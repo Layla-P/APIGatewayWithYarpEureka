@@ -1,8 +1,13 @@
+using Gateway.Extensions;
+using Steeltoe.Discovery.Client;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-var proxyBuilder = builder.Services.AddReverseProxy();
-// Initialize the reverse proxy from the "ReverseProxy" section of configuration
-proxyBuilder.LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
+builder.Services.AddDiscoveryClient();
+
+builder.Services.AddReverseProxy().LoadFromMemory();
+
 
 
 var app = builder.Build();

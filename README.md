@@ -1,1 +1,1 @@
-# Build an API gateway with .NET 5, C# and YARP
+# Build an API gateway with .NET 6, C#, YARP, and Netflix Eureka
